@@ -16,7 +16,7 @@ logging.basicConfig(
 TELEGRAM_API_TOKEN = os.getenv("WIPITO_API_KEY")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
+    await context.bot.send_message(chat_id=update.effective_chat.id, text="Hola soy Wipito, tu asistente academico.")
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     response = request_chat_gpt(update.message.text)
