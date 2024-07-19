@@ -1,15 +1,18 @@
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
+import json
 
 load_dotenv("ks.env")
 
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
+MODEL=""
+
 def request_chat_gpt(user_message):
     try:
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model=MODEL,
             messages=[
                 {"role": "user", "content": user_message}
             ],temperature=0
